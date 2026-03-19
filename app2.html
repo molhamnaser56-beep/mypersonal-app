@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملهم معروف الحاج ناصر - الموقع الشخصي</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Arabic and clean fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f9fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom-left-radius: 30% 10%;
+            border-bottom-right-radius: 30% 10%;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subhead {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Cards and sections */
+        .section {
+            background-color: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+            margin-top: 8px;
+        }
+
+        /* Profile image placeholder */
+        .image-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid white;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .image-placeholder i {
+            font-size: 5rem;
+            color: #4f46e5;
+            opacity: 0.7;
+        }
+
+        /* Info grid for التعريف */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background-color: #f8fafd;
+            padding: 15px 20px;
+            border-radius: 16px;
+            border-right: 5px solid #667eea;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        .info-item span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            background: #f1f4f9;
+            padding: 20px;
+            border-radius: 18px;
+            margin: 20px 0 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #f8fafd;
+            padding: 20px 18px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.2s;
+            border: 1px solid #e9eef3;
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .skill-card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Social / accounts */
+        .accounts-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .account-item {
+            background: #f1f4f9;
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border: 1px solid #d9e2ef;
+            transition: 0.2s;
+        }
+
+        .account-item i {
+            font-size: 1.8rem;
+            color: #4f46e5;
+        }
+
+        .account-item:hover {
+            background: #e0e7ff;
+            border-color: #667eea;
+            transform: scale(1.02);
+        }
+
+        /* What I offer cards */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .offer-card {
+            background: linear-gradient(145deg, #ffffff, #f5f9ff);
+            padding: 25px 20px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .offer-card i {
+            font-size: 2.8rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .offer-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .offer-card p {
+            color: #4b5565;
+        }
+
+        /* Contact form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: white;
+        }
+
+        .form-group textarea {
+            border-radius: 30px;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Contact info strip */
+        .contact-direct {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0 20px;
+        }
+
+        .contact-direct a {
+            color: #1e293b;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            background: #f0f4fe;
+            padding: 10px 20px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+
+        .contact-direct a:hover {
+            background: #dbe7fe;
+            color: #4f46e5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: #64748b;
+            font-size: 0.95rem;
+            border-top: 1px solid #e9edf2;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 25px 15px;
+            }
+            .image-placeholder {
+                width: 160px;
+                height: 160px;
+            }
+            .account-item {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / العنوان الرئيسي -->
+    <div class="hero">
+        <h1>ملهم معروف الحاج ناصر</h1>
+        <p class="subhead">مصمم مبتدئ | شغوف بالتكنولوجيا والإبداع الرقمي</p>
+    </div>
+
+    <div class="container">
+        <!-- قسم الصورة الشخصية + تعريف مختصر -->
+        <div class="section" id="about">
+            <div class="image-placeholder">
+                <div class="image-placeholder" style="overflow: hidden;">
+    <img src="https://i.ibb.co/21XDv0kv/FB-IMG-1773798638179.jpg" 
+         alt="صورة ملهم" 
+         style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+</div>
+ <!-- يمكنك استبدالها بصورة حقيقية لاحقاً -->
+            </div>
+            <h2 class="section-title">التعريف</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>الاسم</strong> <span>ملهم معروف الحاج ناصر</span></div>
+                <div class="info-item"><strong>العمر</strong> <span>16 سنة</span></div>
+                <div class="info-item"><strong>الطول</strong> <span>1.86 cm</span></div>
+                <div class="info-item"><strong>الوزن</strong> <span>120 kg</span></div>
+            </div>
+            <div class="bio">
+                <i class="fas fa-quote-right" style="color: #667eea; opacity: 0.6; margin-left: 8px;"></i>
+                شاب مهتم بالتكنولوجيا والتصميم وتطوير مهاراتي في مجالات الإبداع الرقمي.
+            </div>
+        </div>
+
+        <!-- قسم المهارات -->
+        <div class="section" id="skills">
+            <h2 class="section-title">المهارات</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Adobe Photoshop</h3>
+                    <p>خبرة في التعديل والتصميم</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Adobe XD</h3>
+                    <p>تصميم واجهات ونماذج تفاعلية</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>الذكاء الاصطناعي AI</h3>
+                    <p>استخدام AI في التصميم والإبداع</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>شغف بالتعلم</h3>
+                    <p>التطوير المستمر والاطلاع</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم حساباتي -->
+        <div class="section" id="accounts">
+            <h2 class="section-title">حساباتي على التواصل</h2>
+            <div class="accounts-list">
+                <a href="https://instagram.com/molham_maruf" target="_blank" class="account-item">
+                    <i class="fab fa-instagram"></i> molham_maruf
+                </a>
+                <a href="https://facebook.com/أبو معروف الحاج ناصر" target="_blank" class="account-item">
+                    <i class="fab fa-facebook"></i> أبو معروف الحاج ناصر
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #475569;">
+                <i class="fas fa-globe"></i> تابعني للاطلاع على أعمالي الجديدة
+            </p>
+        </div>
+
+        <!-- قسم ماذا أقدم -->
+        <div class="section" id="services">
+            <h2 class="section-title">ماذا أقدم</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>تصميم UI/UX</h4>
+                    <p>تصميم واجهات مستخدم سهلة وجذابة</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-edit"></i>
+                    <h4>تعديل الصور</h4>
+                    <p>معالجة احترافية للصور باستخدام Photoshop</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-magic"></i>
+                    <h4>تصاميم بالذكاء الاصطناعي</h4>
+                    <p>أفكار وتصاميم مبتكرة باستخدام AI</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>تطوير مستمر</h4>
+                    <p>أسعى للوصول لمستوى احترافي في كل أعمالي</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم التواصل مع نموذج مراسلة -->
+        <div class="section" id="contact">
+            <h2 class="section-title">تواصل معي</h2>
+            
+            <!-- روابط مباشرة للتواصل -->
+            <div class="contact-direct">
+                <a href="https://instagram.com/molham_maruf" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://facebook.com/أبو معروف الحاج ناصر" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+
+            </div>
+
+            <!-- نموذج مراسلة بسيط (يمكنك ربطه بأي خدمة نماذج أو البريد) -->
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" placeholder="اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="رسالتك..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane" style="margin-left: 8px;"></i> أرسل الرسالة</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #6c7a8e;">
+                    سأعود إليك في أقرب وقت ممكن
+                </p>
+            </div>
+        </div>
+
+        <!-- ختام بسيط -->
+        <footer>
+            <p>© 2025 ملهم معروف الحاج ناصر - جميع الحقوق محفوظة</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">شاب طموح في عالم التصميم والتقنية</p>
+        </footer>
+    </div>
+
+    <!-- أيقونة تعديل (اختيارية للعرض) -->
+    <div style="position: fixed; bottom: 20px; left: 20px; background: white; border-radius: 40px; padding: 10px 18px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-size: 0.9rem; border: 1px solid #e0e7ff;">
+        <i class="fas fa-pencil-alt" style="color: #667eea; margin-left: 5px;"></i> يمكنك تعديل المحتوى بسهولة
+    </div>
+</body>
+</html>
